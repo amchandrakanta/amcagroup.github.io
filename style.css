@@ -1,0 +1,228 @@
+/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    background: linear-gradient(135deg, #e0eaff 0%, #d1f1ff 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background: #023e7f;
+    color: #fff;
+    padding: 0;
+}
+.logo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 20px 24px;
+}
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+nav {
+    display: flex;
+    gap: 32px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+nav a:hover, nav a.active {
+    background: #457b9d;
+    color: #f1faee;
+}
+.hero {
+    text-align: center;
+    padding: 54px 16px 28px;
+    background: none;
+}
+.hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.amca-highlight {
+    color: #2196f3;
+    font-weight: 800;
+}
+.hero p {
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+    color: #363636;
+}
+.container, .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(70, 90, 145, 0.09), 0 1.5px 0 #abdbe3;
+    padding: 38px 22px;
+    margin: 38px auto;
+    max-width: 700px;
+    animation: fadeInUp 1s ease;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.home-images {
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+    align-items: center;
+    margin: 36px auto;
+}
+.home-img {
+    width: 46vw;
+    max-width: 340px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.17);
+    transition: transform 0.3s;
+}
+.home-img:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+form input, form select, form button {
+    display: block;
+    width: 98%;
+    margin: 10px auto 18px auto;
+    padding: 13px 11px;
+    border: 1px solid #d4e7ff;
+    border-radius: 8px;
+    font-size: 16px;
+}
+form button {
+    background: #023e7f;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+form button:hover {
+    background: #457b9d;
+}
+footer {
+    margin-top: auto;
+    background: #023e7f;
+    color: #fff;
+    text-align: center;
+    padding: 24px 0 8px;
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+    box-shadow: 0 -2px 12px rgba(0,39,90,0.09);
+    width: 100%;
+}
+
+/* Mobile styles */
+@media (max-width: 850px) {
+    .logo-nav {
+        flex-direction: column;
+        gap: 14px;
+        padding: 14px 10px;
+    }
+    nav {
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    .container, .card {
+        margin: 16px 8px;
+        padding: 22px 8px;
+        max-width: 95vw;
+    }
+    .home-images {
+        flex-direction: column;
+        gap: 22px;
+    }
+    .home-img {
+        width: 92vw;
+        max-width: 96vw;
+    }
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+}
+
+/* animation for smooth fade in */
+@media (max-width: 480px) {
+    .container, .card {
+        padding: 12px 2px;
+        margin: 6px 2px;
+    }
+    .logo-img {
+        height: 36px;
+    }
+    .home-img {
+        border-radius: 11px;
+    }
+    footer {
+        font-size: 0.99rem;
+        padding: 16px 0 6px;
+    }
+}
+
+.about-list {
+    list-style: none;
+    padding: 0 0 0 8px;
+    margin: 24px 0 0 0;
+}
+.about-list li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.04rem;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    background: #f9fafe;
+    border-left: 4px solid #2196f3;
+    border-radius: 9px;
+    box-shadow: 0 1px 8px rgba(90,144,219,0.06);
+    transition: background 0.2s;
+}
+.about-icon {
+    font-size: 1.5em;
+    margin-right: 12px;
+    align-self: center;
+}
+.contact-card .contact-info {
+    display: grid;
+    gap: 18px;
+    margin-top: 22px;
+}
+.contact-icon {
+    font-size: 1.3em;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.contact-card a {
+    color: #023e7f;
+    text-decoration: underline;
+    word-break: break-all;
+}
+@media (max-width: 600px) {
+    .about-list li {
+        font-size: 0.99rem;
+        padding: 8px;
+    }
+    .contact-card .contact-info {
+        gap: 10px;
+    }
+}
